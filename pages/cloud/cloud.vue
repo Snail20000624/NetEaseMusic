@@ -1,0 +1,13 @@
+<template>
+<view class="">
+  云村
+</view>
+</template>
+
+<script setup lang='ts'>
+
+</script>
+
+<style scoped>
+
+</style>
