@@ -3,7 +3,10 @@
     {
       "path": "pages/index/index",
       "style": {
-        "navigationBarTitleText": "首页"
+        "navigationBarTitleText": "首页",
+        "app-plus": {
+          "titleNView": false
+        }
       }
     }, {
       "path": "pages/video/video",
@@ -34,9 +37,10 @@
     "backgroundColor": "#F8F8F8"
   },
   "tabBar": {
-    "backgroundColor": "#333333",
+    "backgroundColor": "#f9f9f9",
+    "borderStyle": "white",
     "selectedColor": "#ff2419",
-    "color": "#8888",
+    "color": "#888",
     "list": [{
       "pagePath": "pages/index/index",
       "iconPath": "static/tab/t_1.png",

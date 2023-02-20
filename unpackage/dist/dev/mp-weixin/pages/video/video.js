@@ -1,0 +1,1 @@
+"use strict";const e=require("../../common/vendor.js"),r={};function c(o,s){return{}}const n=e._export_sfc(r,[["render",c],["__file","D:/WeChatProj/uni_app/NetEaseMusic/pages/video/video.vue"]]);wx.createPage(n);
