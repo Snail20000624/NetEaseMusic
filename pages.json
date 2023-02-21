@@ -12,22 +12,34 @@
     }, {
       "path": "pages/video/video",
       "style": {
-        "navigationBarTitleText": "视频"
+        "navigationBarTitleText": "视频",
+        "app-plus": {
+          "titleNView": false
+        }
       }
     }, {
       "path": "pages/mine/mine",
       "style": {
-        "navigationBarTitleText": "我的"
+        "navigationBarTitleText": "我的",
+        "app-plus": {
+          "titleNView": false
+        }
       }
     }, {
       "path": "pages/cloud/cloud",
       "style": {
-        "navigationBarTitleText": "云村"
+        "navigationBarTitleText": "云村",
+        "app-plus": {
+          "titleNView": false
+        }
       }
     }, {
       "path": "pages/account/account",
       "style": {
-        "navigationBarTitleText": "账户"
+        "navigationBarTitleText": "账户",
+        "app-plus": {
+          "titleNView": false
+        }
       }
     }
   ],
@@ -35,7 +47,7 @@
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
-    "backgroundColor": "#F8F8F8"
+    "backgroundColor": "#FFFFFF"
   },
   "tabBar": {
     "backgroundColor": "#f9f9f9",

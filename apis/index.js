@@ -1,3 +1,5 @@
+// 首页 api 接口
+
 import request from "@/utils/request.js"
 
 // 轮播图请求接口
