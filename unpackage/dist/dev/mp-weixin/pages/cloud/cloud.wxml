@@ -1,1 +1,1 @@
-<view class=""> 云村 </view>
+<view class="data-v-b114a853"><uni-nav-bar class="data-v-b114a853" u-s="{{['d']}}" u-i="b114a853-0" bind:__l="__l"><view class="data-v-b114a853" slot="left"><image src="/static/image/cloud/y_03.png" mode="" class="top-img left data-v-b114a853"></image></view><view class="data-v-b114a853" slot="right"><image src="/static/image/mine/r.png" mode="" class="top-img data-v-b114a853"></image></view></uni-nav-bar></view>

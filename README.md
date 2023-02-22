@@ -3,5 +3,14 @@
   原项目使用 Vue2 的开发环境开发，自己将使用 Vue3 setup 语法糖的方式进行开发与学习。
   
 # 开发环境
+- HBuilder X 3.6.15
 
 # 实现的功能
+
+# 目前存在的Bug
+- mescroll 插件在 微信小程序中运行报异常错误....
+- 云村界面顶部导航栏照片不显示，顶部栏的文字CSS应该存在问题(推测，同时不排除第三方组件本身的问题)....
+
+# API参考文档
+[网易云音乐 NodeJS版 API](https://binaryify.github.io/NeteaseCloudMusicApi/#/)
+

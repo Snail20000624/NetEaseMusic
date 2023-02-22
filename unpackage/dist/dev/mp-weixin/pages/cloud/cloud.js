@@ -1,1 +1,1 @@
-"use strict";const e=require("../../common/vendor.js"),c={};function r(o,s){return{}}const n=e._export_sfc(c,[["render",r],["__file","D:/WeChatProj/uni_app/NetEaseMusic/pages/cloud/cloud.vue"]]);wx.createPage(n);
+"use strict";const e=require("../../common/vendor.js");Math||n();const n=()=>"../../uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.js",a={__name:"cloud",setup(c){return(r,s)=>({})}},o=e._export_sfc(a,[["__scopeId","data-v-b114a853"],["__file","D:/WeChatProj/uni_app/NetEaseMusic/pages/cloud/cloud.vue"]]);wx.createPage(o);
