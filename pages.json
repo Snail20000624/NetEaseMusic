@@ -41,6 +41,15 @@
           "titleNView": false
         }
       }
+    },
+    {
+      "path": "pages/subpages/login/login",
+      "style": {
+        "navigationBarTitleText": "登录",
+        "app-plus": {
+          "titleNView": false
+        }
+      }
     }
   ],
   "globalStyle": {

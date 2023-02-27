@@ -2,10 +2,23 @@
 import { createStore } from 'vuex'
 
 //声明store的三个最基础的组成部分
-const mutations = {};
+const mutations = {
+  // 保存用户信息
+  storeLogin(state, payload){
+    const temp = {
+      hasLogin: true,
+      token: payload.token,
+      profile: payload.profile
+    }
+    state.userinfo = temp;
+    // 用户信息持久化到 storage
+    uni.setStorageSync('userInfo', JSON.stringify(state.userInfo))
+    
+  }
+};
 const actions = {}
 const state = {
-  userinfo: {
+  userInfo: {
       hasLogin: false,
     }
   }

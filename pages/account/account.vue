@@ -19,11 +19,57 @@
         <view>
           尽享海量音乐
         </view>
-        <navigator class="btn" url="">立即登录</navigator>
+        <navigator class="btn" url="/pages/subpages/login/login">立即登录</navigator>
       </view>
       <!-- 已登录 -->
       <template v-if="userInfo.hasLogin">
-        显示已登录用户的头像信息
+        <view class="userinfo-box flex-box">
+          <view class="avator">
+            <image :src="userInfo.profile.avatarUrl" mode="aspectFit" class="img"></image>
+            <view class="no-img">
+              上传头像
+            </view>
+          </view>
+          <view class="flex-item">
+            <view class="fl">
+              <view class="name">
+                {{userInfo.profile.nickname}}
+              </view>
+              <view class="level">
+                lv{{detail.level || 1}}
+              </view>
+            </view>
+            <image src="../../static/image/account/a_03.png" mode="aspectFit" class="sign fr"></image>
+          </view>
+        </view>
+        <view class="nav-bar flex-box">
+          <view class="flex-item">
+            {{detail.eventCount || 0}}
+            <view class="txt">
+              动态
+            </view>
+          </view>
+          <view class="flex-item">
+            {{detail.follows || 0}}
+            <view class="txt">
+              关注
+            </view>
+          </view>
+          <view class="flex-item">
+            {{detail.followeds || 0}}
+            <view class="txt">
+              粉丝
+            </view>
+          </view>
+          <view class="flex-item">
+            <view class="iconfont">
+              &#xe63a;
+            </view>
+            <view class="txt">
+              编辑资料
+            </view>
+          </view>
+        </view>
       </template>
       <!-- 广告位 -->
       <view class="ad-bar" :class="{bgf: !userInfo.hasLogin}">
@@ -85,18 +131,38 @@
   import uniList from '../../uni_modules/uni-list/components/uni-list/uni-list.vue'
   import uniListItem from '../../uni_modules/uni-list/components/uni-list-item/uni-list-item.vue'
   import {
-    computed
+    computed, onMounted, ref
   } from "vue";
+  import apisAccount from '/apis/account.js';
+  
   const store = useStore();
-  const userInfo = computed(() => store.state.userinfo);
-  
-  
+  const userInfo = computed(() => store.state.userinfo); 
+  let detail = ref({});
   const switchChange = (e)=> {
     console.log(e);
     uni.showToast({
       title: "value:" + e.value
     })
   }
+  
+  // 获取用户详情
+  const getDetail = () =>{
+    const profile = userInfo.profile;
+    if(!profile || !profile.userId){
+      return false;
+    }
+    const params = {
+      uid: profile.userId
+    };
+    apisAccount.apiUserDetail(params).then(res => {
+      console.log("detail::",res);
+      detail.value = res.data;
+    })
+  }
+  
+  onMounted(()=>{
+    getDetail()
+  })
 </script>
 
 <style lang="scss" scoped>
