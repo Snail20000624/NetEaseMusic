@@ -17,8 +17,17 @@ const apiUserDetail = (data)=>{
   })
 }
 
+// 用户注销
+const apiLogout = (data) =>{
+  return request.request({
+    url: 'logout',
+    method: 'GET',
+    data
+  })
+}
 
 export default{
   apiLogin,
-  apiUserDetail
+  apiUserDetail,
+  apiLogout
 }

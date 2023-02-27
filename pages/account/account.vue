@@ -116,7 +116,7 @@
         <uni-list-item title="关于" thumb="/static/image/account/17.png" size="mini" />
       </uni-list>
       <!-- 退出登录 -->
-      <view class="logout" v-if="userInfo.hasLogin">
+      <view class="logout" v-if="userInfo.hasLogin" @click="confirmOutSys">
         退出登录
       </view>
     </scroll-view>
@@ -136,7 +136,7 @@
   import apisAccount from '/apis/account.js';
   
   const store = useStore();
-  const userInfo = computed(() => store.state.userinfo); 
+  const userInfo = computed(() => store.state.userInfo); 
   let detail = ref({});
   const switchChange = (e)=> {
     console.log(e);
@@ -159,7 +159,33 @@
       detail.value = res.data;
     })
   }
-  
+  // 系统登出
+  const confirmOutSys = () => {
+    uni.showModal({
+      title: '网易云音乐',
+      content: '确定退出当前账号？',
+      cancelColor: "#E04B28",
+      success: (res) => {
+        // 点确定
+        if (res.confirm){
+          confirmLogout();
+        }else if(res.cancel){
+          console.log('用户');
+        }
+      }
+    })
+  }
+  // 注销
+  const confirmLogout = () =>{
+    apisAccount.apiLogout().then(res =>{
+      // 清除前端的用户信息
+      store.storeLogout();
+      // 跳转到首页
+      uni.switchTab({
+        url: '/pages/index/index'
+      })
+    })
+  }
   onMounted(()=>{
     getDetail()
   })

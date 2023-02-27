@@ -1,9 +1,17 @@
-<script>
-  import {useStore} from 'vuex'
+<script setup>
+  import {
+    useStore
+  } from 'vuex'
+  import {
+    onLaunch,
+    onShow,
+    onHide
+  } from "@dcloudio/uni-app"
+
+
   const store = useStore();
-	export default {
-		onLaunch: function() {
-			console.log('App Launch');
+  onLaunch(() => {
+      console.log('App Launch');
       uni.getStorage({
         key: 'userInfo',
         success: (res) => {
@@ -12,18 +20,17 @@
           store.storeLogin(JSON.parse(res.data));
         }
       })
-		},
-		onShow: function() {
-			console.log('App Show')
-		},
-		onHide: function() {
-			console.log('App Hide')
-		}
-	}
+    }),
+    onShow(() => {
+      console.log('App Show')
+    }),
+    onHide(() => {
+      console.log('App Hide')
+    })
 </script>
 
 <style lang="scss">
-	/*每个页面公共css */
+  /*每个页面公共css */
   @import "@/common/css/common.scss";
   @import "@/common/css/iconfont.css";
 </style>

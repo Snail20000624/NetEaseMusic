@@ -12,8 +12,18 @@ const mutations = {
     }
     state.userinfo = temp;
     // 用户信息持久化到 storage
-    uni.setStorageSync('userInfo', JSON.stringify(state.userInfo))
-    
+    uni.setStorageSync('userInfo', JSON.stringify(state.userInfo));
+  },
+  // 清除用户信息
+  storeLogout(state){
+    const temp = {
+      hasLogin: false,
+      token: '',
+      profile: {}
+    }
+    state.userInfo = temp;
+    // 清除storage
+    uni.removeStorageSync('userInfo');
   }
 };
 const actions = {}
